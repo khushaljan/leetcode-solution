@@ -8,22 +8,23 @@ public:
             int mid;
        
             
-        if (nums[low] < nums[high]) return nums[low];
+       
         
         while (low < high) {
             int mid = low + (high - low) / 2;
                 
             if (nums[mid] > nums[high]) {
-                low = mid + 1;
-            } else if (nums[mid] < nums[high]) {
-                high = mid;
-            } else {
-                high--;
-            }
+                low=mid+1;
+            } else if(nums[mid]<nums[high]) {
+               high=mid;
+            } 
+                else{
+                        high--;
+                }
         }
         
 
                             
-            return nums[high];
+            return nums[low];
     }
 };
