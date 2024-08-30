@@ -6,9 +6,9 @@ public:
         vector<string> ans;
             int k=10;
             int n=s.size();
-            // if(n<k){
-            //         return ans;
-            // }
+             if(n<k){
+                     return ans;
+             }
          while(j<n){
         string substring=s.substr(j,10);
         
