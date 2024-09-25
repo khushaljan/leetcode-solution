@@ -19,18 +19,20 @@ public:
       //4->3
       //5->4
       //pseudocode
-      ListNode* prev=NULL;
+     if(head==NULL || head->next==NULL){
+             return head;
+     }
       ListNode* cur=head;
+      ListNode* front;
+      ListNode* newHead=reverseList(head->next);
+      front=head->next;
+      front->next=head;
+      head->next=NULL;
+       return newHead;     
+            
       
-      while(cur!=NULL){
+            
       
-      ListNode* front=cur->next;
-      cur->next=prev;
-      prev=cur;
-      cur=front;
-      
-      
-    }
-        return prev;
+
     }
 };
