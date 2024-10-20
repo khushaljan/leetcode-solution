@@ -19,19 +19,19 @@ public:
             }
 
             // Initialize variables to store the number of ways from the cell above (up) and left (left).
-            int up = 0;
-            int left = 0;
+            int down = 0;
+            int right = 0;
 
             // If we are not at the first row (i > 0), update 'up' with the value from the previous row.
             if (i <m-1)
-                up = prev[j];
+                down = prev[j];
 
             // If we are not at the first column (j > 0), update 'left' with the value from the current row.
             if (j < n-1)
-                left = temp[j + 1];
+                right = temp[j + 1];
 
             // Calculate the number of ways to reach the current cell by adding 'up' and 'left'.
-            temp[j] = up + left;
+            temp[j] = down+right;
         }
 
         // Update the previous row with the values calculated for the current row.
