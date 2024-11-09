@@ -12,7 +12,7 @@ public:
     for (int i = 0; i < n; i++) {
         hash[i] = i; // Initialize with the current index
         for (int prev_index = 0; prev_index < i; prev_index++) {
-            if (nums[i] % nums[prev_index] == 0 && dp[i] < dp[prev_index] + 1) {
+            if (nums[i] % nums[prev_index] == 0 && dp[prev_index]==dp[i]) {
 
                 dp[i] = 1 + dp[prev_index];
                 hash[i] = prev_index;
