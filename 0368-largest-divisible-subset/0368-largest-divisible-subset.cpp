@@ -21,27 +21,26 @@ public:
     }
 
     int ans = -1;
-    int lastIndex = -1;
+    int lastindex = -1;
 
     for (int i = 0; i < n; i++) {
-        if (dp[i] > ans) {
+            if(dp[i]>ans){
             ans = dp[i];
-            lastIndex = i;
-        }
+            lastindex = i;
+            }
     }
 
     vector<int> temp;
-    temp.push_back(nums[lastIndex]);
+    temp.push_back(nums[lastindex]);
 
     // Reconstruct the divisible subset using the hash table
-    while (hash[lastIndex] != lastIndex) {
-        lastIndex = hash[lastIndex];
-        temp.push_back(nums[lastIndex]);
-    }
-
+   while(hash[lastindex]!=lastindex){
+           lastindex=hash[lastindex];
+           temp.push_back(nums[lastindex]);
+           
     // Reverse the array to get the correct order
     reverse(temp.begin(), temp.end());
-
+   }
     return temp;
 }
     vector<int> largestDivisibleSubset(vector<int>& nums) {
